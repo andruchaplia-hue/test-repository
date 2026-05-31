@@ -6,8 +6,9 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error, r2_score
 
-def generate_big_int(length=50):
-    """Generates a random big integer of a given length."""
+def generate_big_int():
+    """Generates a random big integer of a random length."""
+    length = random.randint(10, 100) # Length can be anywhere from 10 to 100 digits
     return random.randint(10**(length-1), (10**length) - 1)
 
 def process_number(num):
@@ -61,9 +62,8 @@ def main():
     data = []
     num_samples = 1000
     for _ in range(num_samples):
-        # Generate random big int of length between 20 and 100
-        length = random.randint(20, 100)
-        num = generate_big_int(length)
+        # Generate random big int
+        num = generate_big_int()
         result = process_number(num)
 
         # Get counts for features

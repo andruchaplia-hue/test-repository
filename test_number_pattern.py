@@ -33,9 +33,10 @@ class TestNumberPattern(unittest.TestCase):
         self.assertAlmostEqual(process_number(11111000), expected)
 
     def test_generate_big_int(self):
-        # Test generation length
-        num = generate_big_int(20)
-        self.assertEqual(len(str(num)), 20)
+        # Test generation
+        num = generate_big_int()
+        self.assertTrue(num > 0)
+        self.assertTrue(len(str(num)) >= 10)
 
 if __name__ == '__main__':
     unittest.main()
