@@ -7,9 +7,9 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error, r2_score
 
 def generate_big_int():
-    """Generates a random big integer of a random length."""
-    length = random.randint(10, 100) # Length can be anywhere from 10 to 100 digits
-    return random.randint(10**(length-1), (10**length) - 1)
+    """Generates a random big integer with no strict length constraints."""
+    # Use random number of bits to generate integers of highly variable lengths
+    return random.getrandbits(random.randint(1, 1024))
 
 def process_number(num):
     """
